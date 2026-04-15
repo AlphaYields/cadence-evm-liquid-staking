@@ -89,44 +89,7 @@ Typical responsibilities:
 
 ---
 
-## Flow diagrams
-
-### Cadence: stake
-
-```mermaid
-flowchart LR
-  User[User]
-  StakeTx[stake_cdc]
-  LS[LiquidStaking]
-  ND[NodeDelegator]
-  Mint[Mint_stFlow]
-  User -->|FLOW_vault| StakeTx
-  StakeTx --> LS
-  LS -->|delegateNewTokens| ND
-  LS -->|mintTokens| Mint
-  Mint -->|stFlow_vault| User
-```
-
-### Cadence: unstake and claim
-
-```mermaid
-flowchart TD
-  User[User]
-  UnstakeTx[unstake_cdc]
-  LS[LiquidStaking]
-  Pend[pending_unstakes]
-  Epoch[Epoch_boundary]
-  ProcTx[process_unstakes_cdc]
-  Ready[ready_unstakes_and_pool]
-  CashTx[cashout_cdc]
-  User -->|burn_stFlow| UnstakeTx
-  UnstakeTx --> LS
-  LS --> Pend
-  Epoch --> ProcTx
-  ProcTx --> Ready
-  User -->|requestId| CashTx
-  CashTx -->|FLOW_to_receiver| User
-```
+## Flow-EVM diagram
 
 ### EVM: stake with keeper fulfillment
 
