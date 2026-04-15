@@ -1,1 +1,1 @@
-# flow-native-staking
+### Cadence LSP with EVM exposed functions

@@ -1,0 +1,19 @@
+# Third-party and build artifacts — not project source (reduces noise; matches agent read restrictions)
+lib/
+out/
+cache/
+broadcast/
+
+# Secrets
+.env
+.env.*
+
+# Large / generated coverage
+coverage.json
+coverage.lcov
+lcov.info
+
+
+emulator-account.pkey
+testnet-key.json
+testnet-acc.pkey
