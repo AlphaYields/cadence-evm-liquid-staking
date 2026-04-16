@@ -43,6 +43,8 @@ access(all) contract LiquidStaking {
     access(all) event Staked(flowAmount: UFix64, stFlowAmount: UFix64)
     access(all) event UnstakeRequested(id: UInt64, stFlowAmount: UFix64, flowAmount: UFix64)
     access(all) event UnstakeClaimed(id: UInt64, flowAmount: UFix64)
+    /// Keeper pulled FLOW from the withdraw pool for an EVM fulfillment path (not Cadence cashout).
+    access(all) event UnstakeFlowRoutedToEvm(id: UInt64, flowAmount: UFix64)
     access(all) event RewardsCompounded(rewardAmount: UFix64, feeAmount: UFix64)
     access(all) event ProtocolFeeUpdated(oldFee: UFix64, newFee: UFix64)
     access(all) event Paused()
@@ -247,6 +249,24 @@ access(all) contract LiquidStaking {
                     LiquidStaking.readyUnstakes[id] = request
                 }
             }
+        }
+
+        /// Withdraw FLOW for a **ready** unstake into the keeper transaction so it can be
+        /// bridged/deposited to the COA and paid out on Flow EVM (`LSPVault.fulfillUnstakeRequest`).
+        /// Removes the entry from `readyUnstakes` (same net effect on Cadence as `cashout` for that ID).
+        access(all) fun finalizeUnstakeForEvm(requestId: UInt64): @FlowToken.Vault {
+            let request = LiquidStaking.readyUnstakes.remove(key: requestId)
+                ?? panic("Unstake request not ready or unknown id")
+
+            let pool = LiquidStaking.account.storage
+                .borrow<auth(FungibleToken.Withdraw) &FlowToken.Vault>(
+                    from: LiquidStaking.WithdrawPoolStoragePath
+                ) ?? panic("Withdraw pool not found")
+
+            assert(pool.balance >= request.flowAmount, message: "Withdraw pool underflow")
+
+            emit UnstakeFlowRoutedToEvm(id: requestId, flowAmount: request.flowAmount)
+            return <- pool.withdraw(amount: request.flowAmount) as! @FlowToken.Vault
         }
 
         access(all) fun setProtocolFee(newFee: UFix64) {

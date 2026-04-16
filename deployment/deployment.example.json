@@ -1,0 +1,20 @@
+{
+  "network": "testnet",
+  "notes": "Copy to deployment.local.json (gitignored) and fill after deploy. Use flow scripts + cast where noted.",
+
+  "cadence": {
+    "deployerAddress": "0xYOUR_PROTOCOL_ACCOUNT",
+    "liquidStakingAddress": "0xSAME_AS_DEPLOYER_IF_CONTRACT_IN_ACCOUNT",
+    "stFlowTokenAddress": "0xSAME_AS_DEPLOYER_IF_CONTRACT_IN_ACCOUNT",
+    "coaEvmAddress": "0xFROM_flow_scripts_execute_get_coa_evm_address",
+    "stFlowVaultTypeIdentifier": "FROM_flow_scripts_execute_stflow_vault_type_identifier"
+  },
+
+  "evm": {
+    "chainId": 545,
+    "rpcUrl": "https://testnet.evm.nodes.onflow.org",
+    "lspVaultAddress": "0xFROM_deploy_log_or_cast",
+    "bridgedStFlowErc20Address": "0xFROM_Flow_EVM_bridge_after_onboarding_stFlow",
+    "flowReceiptAddress": "0xOPTIONAL_query_LSPVault_FLOW_RECEIPT()"
+  }
+}

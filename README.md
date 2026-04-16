@@ -56,13 +56,13 @@ There is no instant “quick unstake” in this minimal design: exits follow Flo
 User calls `requestStake` with native FLOW. The vault records a pending stake, mints **receipt** tokens at the vault’s cached rate, and emits an event. The user does **not** receive VM-bridged `stFlow` in the same transaction.
 
 **What the keeper does for EVM stake**  
-Observes the stake event (or polls pending state), bridges FLOW from EVM to Cadence (into the LSP account path your integration uses), runs Cadence staking / mints real `stFlow` to the protocol or COA as designed, bridges `stFlow` back to the vault on EVM, then the **COA** calls `fulfillStakeRequest` on the vault: receipt is burned and real `stFlow` is transferred to the user.
+Observes the stake event (or polls pending state), then submits **`cadence/transactions/keeper/fulfill_evm_stake_bundle.cdc`**: one Cadence transaction pulls native FLOW from the vault to the COA, stakes on Cadence, bridges stFlow to Flow EVM via the official Flow EVM bridge, transfers ERC‑20 stFlow into `LSPVault`, and the COA calls `fulfillStakeRequest` (receipt burned, user paid).
 
 **Unstaking (EVM user)**  
 User approves and calls `requestUnstake`; bridged `stFlow` is pulled into the vault and an unstake request is recorded.
 
 **What the keeper does for EVM unstake**  
-Bridges locked `stFlow` to Cadence, burns or redeems through `LiquidStaking.unstake` as appropriate, waits for epoch processing plus Cadence `cashout` / pool funding as your pipeline defines, then sends native FLOW to the vault and the COA calls `fulfillUnstakeRequest(id, flowAmount)` with the **actual** FLOW amount returned from Cadence (passed explicitly to avoid precision mismatch).
+**Tx 1:** `fulfill_evm_unstake_start_bundle.cdc` — pull locked stFlow from the vault to the COA, bridge EVM→Cadence, `LiquidStaking.unstake`. **Wait** for the staking epoch, then **`process_unstakes.cdc`** (epoch housekeeping for all pending unstakers). **Tx 3:** `fulfill_evm_unstake_finalize_bundle.cdc` — ready FLOW to COA, fund `LSPVault`, `fulfillUnstakeRequest(id, flowAmount)`.
 
 ---
 
@@ -77,11 +77,11 @@ Typical responsibilities:
 - Optionally in the same Cadence transaction: COA `call` on `LSPVault.syncRate` so the EVM vault’s `_rate` matches `LiquidStaking.flowPerStFlow()` scaled to 18 decimals (see `cadence/transactions/keeper/compound_and_sync.cdc`).
 
 **After epoch boundary (unstakes)**  
-- Call `process_unstakes` so FLOW moves from the delegator’s unstaked bucket into the withdraw pool and pending Cadence unstake requests become claimable.
+- Call `process_unstakes.cdc` so FLOW moves from the delegator’s unstaked bucket into the withdraw pool and pending Cadence unstake requests become ready.
 
 **EVM queue**  
-- Index `StakeRequested` / `UnstakeRequested` (and similar) from `LSPVault`.  
-- For each pending item: bridge assets, interact with Cadence `LiquidStaking` / FLOW vaults as required, then use the COA to invoke `fulfillStakeRequest` / `fulfillUnstakeRequest` on the vault.
+- Index `StakeRequested` / `UnstakeRequested` from `LSPVault`.  
+- Stake: `fulfill_evm_stake_bundle.cdc`. Unstake: `fulfill_evm_unstake_start_bundle.cdc`, then after the epoch `process_unstakes.cdc`, then `fulfill_evm_unstake_finalize_bundle.cdc`.
 
 **Operational notes**  
 - In this POC the bot signs as the same account that holds `Admin` and the COA (see **Disclaimer** under **Who owns what**). Vault `onlyOwner` on EVM is the COA.  

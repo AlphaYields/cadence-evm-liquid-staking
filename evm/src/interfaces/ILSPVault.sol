@@ -12,7 +12,10 @@ interface ILSPVault {
     struct StakeRequest {
         RequestStatus status;
         address user;
+        /// stFlow amount (receipt parity); see `flowWei` for native locked on `requestStake`.
         uint256 amount;
+        /// Native wei locked for this request until withdrawn by owner (COA) for Cadence staking.
+        uint256 flowWei;
     }
 
     struct UnstakeRequest {
@@ -48,6 +51,10 @@ interface ILSPVault {
     function requestUnstake(uint256 _amount) external returns (uint256);
     function fulfillStakeRequest(uint256 _id) external;
     function fulfillUnstakeRequest(uint256 _id, uint256 _flowAmount) external;
+    /// Pull native FLOW locked for a pending stake to the COA (`msg.sender`) for bridging to Cadence.
+    function withdrawPendingStakeNative(uint256 _id) external returns (uint256 amount);
+    /// Pull locked stFlow for a pending unstake to the COA (`msg.sender`) for bridging to Cadence.
+    function withdrawPendingUnstakeStFlow(uint256 _id) external returns (uint256 amount);
     function updateConfig(Config calldata _config) external;
     function syncRate(uint256 _newRate) external;
     function getConfig() external view returns (Config memory);

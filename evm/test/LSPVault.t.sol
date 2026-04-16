@@ -178,4 +178,39 @@ contract LSPVaultTest is Test {
         vm.expectRevert(abi.encodeWithSelector(ILSPVault.NativeTransferFailed.selector));
         lspVault.fulfillUnstakeRequest(1, 100 ether);
     }
+
+    function testWithdrawPendingStakeNative_movesWeiToOwner() public {
+        vm.prank(staker);
+        lspVault.requestStake{value: 50 ether}();
+
+        uint256 coaBefore = coa.balance;
+        uint256 vaultBefore = address(lspVault).balance;
+
+        vm.prank(coa);
+        uint256 withdrawn = lspVault.withdrawPendingStakeNative(1);
+
+        assertEq(withdrawn, 50 ether);
+        assertEq(coa.balance, coaBefore + 50 ether);
+        assertEq(address(lspVault).balance, vaultBefore - 50 ether);
+
+        (ILSPVault.RequestStatus status,, uint256 amount, uint256 flowWei) = lspVault.stakeRequests(1);
+        assertEq(uint256(status), uint256(ILSPVault.RequestStatus.PENDING));
+        assertEq(flowWei, 0);
+        assertEq(amount, 50 ether);
+    }
+
+    function testWithdrawPendingUnstakeStFlow_movesTokensToOwner() public {
+        stFlow.mint(staker, 40 ether);
+        vm.startPrank(staker);
+        stFlow.approve(address(lspVault), type(uint256).max);
+        lspVault.requestUnstake(40 ether);
+        vm.stopPrank();
+
+        vm.prank(coa);
+        uint256 pulled = lspVault.withdrawPendingUnstakeStFlow(1);
+
+        assertEq(pulled, 40 ether);
+        assertEq(stFlow.balanceOf(coa), 40 ether);
+        assertEq(stFlow.balanceOf(address(lspVault)), 0);
+    }
 }

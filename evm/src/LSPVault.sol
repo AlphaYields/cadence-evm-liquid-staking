@@ -71,7 +71,8 @@ contract LSPVault is Ownable, ILSPVault {
         stakeRequests[requestId] = StakeRequest({
             status: RequestStatus.PENDING,
             user: msg.sender,
-            amount: stFlowAmount
+            amount: stFlowAmount,
+            flowWei: msg.value
         });
 
         FLOW_RECEIPT.mint(msg.sender, stFlowAmount);
@@ -165,6 +166,29 @@ contract LSPVault is Ownable, ILSPVault {
         }
         
         emit UnstakeFulfilled(_id, req.user, _flowAmount);
+    }
+
+    /// @inheritdoc ILSPVault
+    function withdrawPendingStakeNative(uint256 _id) external onlyOwner returns (uint256 amount) {
+        StakeRequest storage req = stakeRequests[_id];
+        if (req.status != RequestStatus.PENDING) revert InvalidRequest();
+
+        amount = req.flowWei;
+        if (amount == 0) revert InvalidRequest();
+
+        req.flowWei = 0;
+
+        (bool ok,) = payable(msg.sender).call{value: amount}("");
+        if (!ok) revert NativeTransferFailed();
+    }
+
+    /// @inheritdoc ILSPVault
+    function withdrawPendingUnstakeStFlow(uint256 _id) external onlyOwner returns (uint256 amount) {
+        UnstakeRequest storage req = unstakeRequests[_id];
+        if (req.status != RequestStatus.PENDING) revert InvalidRequest();
+
+        amount = req.amount;
+        IERC20(ST_FLOW_ADDRESS).safeTransfer(msg.sender, amount);
     }
 
       /////////////////////////////////////////////////////////////////

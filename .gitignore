@@ -13,6 +13,9 @@ docs/
 # Dotenv file
 .env
 
+# Local deployment record (copy from deployment/deployment.example.json)
+deployment/deployment.local.json
+
 # Flow CLI / Cadence tests
 coverage.json
 coverage.lcov
