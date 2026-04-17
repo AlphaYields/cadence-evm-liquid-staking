@@ -163,7 +163,8 @@ This is the **protocol admin Cadence account** (see **Who owns what**): it holds
 - Deploy `stFlowToken` and `LiquidStaking` to the **same** Flow account (`access(account)` mint on `stFlow` requires this).  
 - `register_delegator.cdc`: registers a `FlowIDTableStaking.NodeDelegator` for a chosen **node ID** and initial committed FLOW (subject to Flow minimums). This must succeed during a staking-enabled phase.  
 - `setup_coa.cdc`: creates `EVM.CadenceOwnedAccount` at `/storage/evm` for deploying and owning EVM contracts.  
-- Deploy `LSPVault` via `deploy_evm_contract.cdc` (bytecode without `0x` for `decodeHex`), then point the keeper at the deployed vault address.
+- Onboard Cadence `stFlowToken` through the **Flow EVM bridge** so you have the **bridged stFlow ERC‑20 address** (required by `LSPVault`’s constructor).  
+- Deploy `LSPVault` via `deploy_evm_contract.cdc` (bytecode without `0x` for `decodeHex`; constructor args must include that ERC‑20 address), then point the keeper at the deployed vault address.
 
 **Config across Cadence and EVM**  
 - `update_liquid_staking_and_evm_vault.cdc` updates `LiquidStaking` fee + pause and calls `LSPVault.updateConfig` in one transaction (COA + admin).

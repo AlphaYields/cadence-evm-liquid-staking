@@ -1,6 +1,6 @@
 {
   "network": "testnet",
-  "notes": "Copy to deployment.local.json (gitignored) and fill after deploy. Use flow scripts + cast where noted.",
+  "notes": "Copy to deployment.local.json (gitignored) and fill after deploy. Order: run onboard_stflow_token_type_for_evm_bridge.cdc then get_bridged_stflow_evm_address.cdc before LSPVault deploy. See deployment/TESTNET_COMMANDS.md.",
 
   "cadence": {
     "deployerAddress": "0xYOUR_PROTOCOL_ACCOUNT",

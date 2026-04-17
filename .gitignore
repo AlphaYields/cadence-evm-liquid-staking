@@ -21,6 +21,6 @@ coverage.json
 coverage.lcov
 imports/
 
-emulator-account.pkey
+# Never commit private keys (any name)
+*.pkey
 testnet-key.json
-testnet-acc.pkey

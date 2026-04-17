@@ -14,6 +14,5 @@ coverage.lcov
 lcov.info
 
 
-emulator-account.pkey
+*.pkey
 testnet-key.json
-testnet-acc.pkey

@@ -622,7 +622,7 @@
 			}
 		},
 		"testnet-acc": {
-			"address": "220353c632a2f377",
+			"address": "0x2ebe72605dfc9fd0",
 			"key": {
 				"type": "file",
 				"location": "testnet-acc.pkey"
