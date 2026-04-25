@@ -24,3 +24,8 @@ imports/
 # Never commit private keys (any name)
 *.pkey
 testnet-key.json
+
+# Demo dashboard local overrides (may contain addresses / secrets)
+demo/config.local.js
+
+test-data.txt

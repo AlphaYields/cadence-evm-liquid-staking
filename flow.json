@@ -1,73 +1,9 @@
 {
 	"contracts": {
-		"Burner": {
-			"source": "",
-			"aliases": {
-				"emulator": "ee82856bf20e2aa6",
-				"mainnet": "f233dcee88fe0abe",
-				"testnet": "9a0766d93b6608b7"
-			}
-		},
-		"EVM": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7",
-				"mainnet": "e467b9dd11fa00df",
-				"testnet": "8c5303eaa26202d6"
-			}
-		},
-		"FlowIDTableStaking": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7",
-				"mainnet": "8624b52f9ddcd04a",
-				"testnet": "9eca2b38b18b5dfe"
-			}
-		},
-		"FlowToken": {
-			"source": "",
-			"aliases": {
-				"emulator": "0ae53cb6e3f42a79",
-				"mainnet": "1654653399040a61",
-				"testnet": "7e60df042a9c0868"
-			}
-		},
-		"FungibleToken": {
-			"source": "",
-			"aliases": {
-				"emulator": "ee82856bf20e2aa6",
-				"mainnet": "f233dcee88fe0abe",
-				"testnet": "9a0766d93b6608b7"
-			}
-		},
-		"FungibleTokenMetadataViews": {
-			"source": "",
-			"aliases": {
-				"emulator": "ee82856bf20e2aa6",
-				"mainnet": "f233dcee88fe0abe",
-				"testnet": "9a0766d93b6608b7"
-			}
-		},
 		"LiquidStaking": {
 			"source": "cadence/contracts/LiquidStaking.cdc",
 			"aliases": {
 				"testing": "0000000000000007"
-			}
-		},
-		"MetadataViews": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7",
-				"mainnet": "1d7e57aa55817448",
-				"testnet": "631e88ae7f1d7c20"
-			}
-		},
-		"ViewResolver": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7",
-				"mainnet": "1d7e57aa55817448",
-				"testnet": "631e88ae7f1d7c20"
 			}
 		},
 		"stFlowToken": {
@@ -78,384 +14,20 @@
 		}
 	},
 	"dependencies": {
-		"ArrayUtils": {
-			"source": "testnet://dfc20aee650fcbdf.ArrayUtils",
-			"hash": "e70ddc2f0c7c72158a3f6c68de3a131e1f49e2908ad83eac0308f9e2953957d5",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
 		"Burner": {
 			"source": "mainnet://f233dcee88fe0abe.Burner",
 			"hash": "71af18e227984cd434a3ad00bb2f3618b76482842bae920ee55662c37c8bf331",
-			"block_height": 148502665,
-			"aliases": {}
-		},
-		"CrossVMMetadataViews": {
-			"source": "testnet://631e88ae7f1d7c20.CrossVMMetadataViews",
-			"hash": "7e79b77b87c750de5b126ebd6fca517c2b905ac7f01c0428e9f3f82838c7f524",
-			"block_height": 316638714,
+			"block_height": 149533021,
 			"aliases": {
 				"emulator": "f8d6e0586b0a20c7",
-				"mainnet": "1d7e57aa55817448",
-				"testnet": "631e88ae7f1d7c20"
-			}
-		},
-		"CrossVMNFT": {
-			"source": "testnet://dfc20aee650fcbdf.CrossVMNFT",
-			"hash": "8fe69f487164caffedab68b52a584fa7aa4d54a0061f4f211998c73a619fbea5",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"CrossVMToken": {
-			"source": "testnet://dfc20aee650fcbdf.CrossVMToken",
-			"hash": "9f055ad902e7de5619a2b0f2dc91826ac9c4f007afcd6df9f5b8229c0ca94531",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVM": {
-			"source": "testnet://8c5303eaa26202d6.EVM",
-			"hash": "02fdf06350d1aa9eaff70bb355968e46160a226ded80daf229330e7a1d8d8c2c",
-			"block_height": 316638714,
-			"aliases": {}
-		},
-		"EVMVMBridgedNFT_096037d43bdd592a291c5be11b72de2554d08cdb": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedNFT_096037d43bdd592a291c5be11b72de2554d08cdb",
-			"hash": "c714f70df008de5b261e71fbffe2a5969741dadf38c2538ff33cc039b0d3f9db",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedNFT_3fe47f54dbb0c9e2c98c3ac1b327720e18c06746": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedNFT_3fe47f54dbb0c9e2c98c3ac1b327720e18c06746",
-			"hash": "00b3286522930fc35a594d95b0a85f8ab72ca787b699a39c773a34f36c462631",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedNFT_9204ea1f54212963f210ec89c712594ff5291223": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedNFT_9204ea1f54212963f210ec89c712594ff5291223",
-			"hash": "c8b49b33d2568f9953c2173a1c3d6865ee382cf4502da9ed91e663dc211961ec",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedNFT_c2a60e868fb75b7ea2e24de2e07ea9e552b5ab61": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedNFT_c2a60e868fb75b7ea2e24de2e07ea9e552b5ab61",
-			"hash": "accf0e9486d95ebd9998e8b057e3799cab1a49036b042af54f4a9b6aab67bb53",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedNFT_f883d97d1673251bcded8d0b209f34c1e5c5ac3b": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedNFT_f883d97d1673251bcded8d0b209f34c1e5c5ac3b",
-			"hash": "33265bbbc020aa82137bf79bebadcf09b827bdc808820cb49966aa9d9c55a570",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedNFT_fa91411c917ba4bce744575cde4f15952abce2b0": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedNFT_fa91411c917ba4bce744575cde4f15952abce2b0",
-			"hash": "f857f6624cae7c2be4a18c32b5602b1cd022ca6d4f30eed081de7c820049f5a9",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_059a77239dafa770977dd9f1e98632c3e4559848": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_059a77239dafa770977dd9f1e98632c3e4559848",
-			"hash": "b206428a55ce9f3c0eddcf2846913a35ed5d93eb335a1928172f3c4a8086a5db",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_1119ca4d5145432b7b1cd197d136da15e236e896": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_1119ca4d5145432b7b1cd197d136da15e236e896",
-			"hash": "efaf12ed444d1e2c73bcc9d3aacc281228c030025275f3e47462dac68dea78ef",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_11fb4840fc77f6480909ac8506aa733fe3d5a889": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_11fb4840fc77f6480909ac8506aa733fe3d5a889",
-			"hash": "6cb88da00f392372eda232daa33329313723442ad2a35d1641bad29c1fc8660b",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_208d09d2a6dd176e3e95b3f0de172a7471c5b2d6": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_208d09d2a6dd176e3e95b3f0de172a7471c5b2d6",
-			"hash": "e7e1ca4c43d432582629e415f1ca7beb34a6def34ddbf0b541d0ed1c9d9432c5",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_30f44c64725727f2001e6c1ef6e6ce9c7ab91dc3": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_30f44c64725727f2001e6c1ef6e6ce9c7ab91dc3",
-			"hash": "932bc18aabef48e29e1b87a302189de8591af66bb75d8b12cf2182fa2b9d87ad",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_3c9469d8c179c35c9b908ca46a8670a419628f0a": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_3c9469d8c179c35c9b908ca46a8670a419628f0a",
-			"hash": "d648746a3791ed45c060570b3a099d0911f04a760c85c424a0828a731993f0e8",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_4154d5b0e2931a0a1e5b733f19161aa7d2fc4b95": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_4154d5b0e2931a0a1e5b733f19161aa7d2fc4b95",
-			"hash": "dd4a14fcaaa7fca16c34731c7c41b0b9272bdcf9d0ff5c888d3d554a9618a338",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_4e2dccafe86719b7bffac3b1041031ddd07af5ff": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_4e2dccafe86719b7bffac3b1041031ddd07af5ff",
-			"hash": "5f5a6c2c21b016e46dd49a53c99fc4c0cc59f21c62f6b389cfc4a912480404b8",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_5b67057fa946a4a664546e3df9d2d1b1ab222f36": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_5b67057fa946a4a664546e3df9d2d1b1ab222f36",
-			"hash": "d61997f2c268ef781e5037a6697c99d8f8a5b7e3faabf7a09b3374e8bb444e75",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_5e65b6b04fba51d95409712978cb91e99d93ae73": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_5e65b6b04fba51d95409712978cb91e99d93ae73",
-			"hash": "1001cb72ef284584f8b9ef18464b3c221296da9a547f0d60a79a3196f27f5f2c",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_61b44d19486ee492449e83c1201581c754e9e1e1": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_61b44d19486ee492449e83c1201581c754e9e1e1",
-			"hash": "4b2c3dd36861e0ccdf615b082d50f482b420b1d8f8fc72a2030da91fba10f324",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_8cdd28a0ac527541e7736c0f87b26390ff227f89": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_8cdd28a0ac527541e7736c0f87b26390ff227f89",
-			"hash": "c9f5a1cefd621078379155833c4880a34ea7c6da842ab861f4c41cc30c4e78b9",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_8e3dc6e937b560ce6a1aaa78afc775228969d16c": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_8e3dc6e937b560ce6a1aaa78afc775228969d16c",
-			"hash": "c252d16c82aa9736baeab4a2edd828370911f888bc4a7089cd84eb5af3406df4",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_9b7550d337bb449b89c6f9c926c3b976b6f4095b": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_9b7550d337bb449b89c6f9c926c3b976b6f4095b",
-			"hash": "bf3ce5003c2286e68000cd1ecc2a0bd597b24c9ccdb56ac7572063d52641f19a",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_a7cf2260e501952c71189d04fad17c704dfb36e6": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_a7cf2260e501952c71189d04fad17c704dfb36e6",
-			"hash": "e4e4f1a0cf237c7edb76fbbfecc73d0ef2544ed65bb3286832c4fe9e58cff478",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_c4f1dfc005cb2285b8a9ede7c525b0eedf24f5db": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_c4f1dfc005cb2285b8a9ede7c525b0eedf24f5db",
-			"hash": "93916a4d78c6676308c25f380c50d9c10a3373158c26bb8e1d014767318bdd5e",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_cbef1ce98ccda585d4204f585f260c7b530622c7": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_cbef1ce98ccda585d4204f585f260c7b530622c7",
-			"hash": "2b9e7fef32d0872b689d3696c43037dc3b06edfd567e30f32ae796b3cc36ff88",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_d431955d55a99ef69beb96ba34718d0f9fbc91b1": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_d431955d55a99ef69beb96ba34718d0f9fbc91b1",
-			"hash": "57d4afe033f1caf4f4e12131d39c65c7ef18c3c0aad69cfea11161f33468b524",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_d7d43ab7b365f0d0789ae83f4385fa710ffdc98f": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_d7d43ab7b365f0d0789ae83f4385fa710ffdc98f",
-			"hash": "a763e483e914be4540ee21771b5d7d051d6967b7842b5620484a8cbc0e3ea614",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_e8b2f34745a4bc19c9cc7b403750fb2d875c5762": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_e8b2f34745a4bc19c9cc7b403750fb2d875c5762",
-			"hash": "21b5d8d99230d741fe7ac93aff0c60ef6c7f58c3c6825824655f9b267c980122",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_eb566070912e82a7971232f06dcf7e79568691a8": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_eb566070912e82a7971232f06dcf7e79568691a8",
-			"hash": "af409642955a122c868e198dfd471e6388855dcffabeb27fd8c01c5759aa935c",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_efddc6ac171bd9be4c450c81b4869e2aa1088402": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_efddc6ac171bd9be4c450c81b4869e2aa1088402",
-			"hash": "c0d5c81245ed7866ed9ed78678189c54ac994081b736acc27ca8cbb2dad49a16",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"EVMVMBridgedToken_f2e5a325f7d678da511e66b1c0ad7d5ba4df93d3": {
-			"source": "testnet://dfc20aee650fcbdf.EVMVMBridgedToken_f2e5a325f7d678da511e66b1c0ad7d5ba4df93d3",
-			"hash": "e8569d6e0fed9ec97aea55201afc6157b7c3204d6d7ffc760f94b192de1f5be0",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridge": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridge",
-			"hash": "7670af5e81ea7f3fd55f3582604cf085555deda3bd0c9f13ec7fbca822fc3810",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeAccessor": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeAccessor",
-			"hash": "b37c0be02ff189bbf93f41dfe86dd98cfcf6aa9c56a44cbe509534c700faada3",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeConfig": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeConfig",
-			"hash": "340924addedf69a533c1188ed8afa483aab102910271e144b86a6db32a582dd5",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeCustomAssociationTypes": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeCustomAssociationTypes",
-			"hash": "4651183c3f04f8c5faaa35106b3ab66060ce9868590adb33f3be1900c12ea196",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeCustomAssociations": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeCustomAssociations",
-			"hash": "8f999d65c8f584eab06eb26a10f1f41a31c2bbf1db1bb152988e9d9313c97fe7",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeHandlerInterfaces": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeHandlerInterfaces",
-			"hash": "ebde39e35c8351947b95aa751abb6a8fb69cf7f893013f54964ae69cad223996",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeHandlers": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeHandlers",
-			"hash": "edfa4f48fdaddbb3b9b0549aa7315d8aaaff8809e94258fa34aec44303bc78b8",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeNFTEscrow": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeNFTEscrow",
-			"hash": "30257592838edfd4b72700f43bf0326f6903e879f82ac5ca549561d9863c6fe6",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeResolver": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeResolver",
-			"hash": "c1ac18e92828616771df5ff5d6de87866f2742ca4ce196601c11e977e4f63bb3",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeTemplates": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeTemplates",
-			"hash": "78b8115eb0ef2be4583acbe655f0c5128c39712084ec23ce47820ea154141898",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeTokenEscrow": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeTokenEscrow",
-			"hash": "49df9c8e5d0dd45abd5bf94376d3b9045299b3c2a5ba6caf48092c916362358d",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"FlowEVMBridgeUtils": {
-			"source": "testnet://dfc20aee650fcbdf.FlowEVMBridgeUtils",
-			"hash": "5b7a17864dcfc3d0a70ba21b3b840d1913e2a75fcb49444e255fc80922394c89",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
+				"mainnet": "f233dcee88fe0abe",
+				"testnet": "9a0766d93b6608b7"
 			}
 		},
 		"FlowFees": {
 			"source": "mainnet://f919ee77447b7497.FlowFees",
 			"hash": "341cc0f3cc847d6b787c390133f6a5e6c867c111784f09c5c0083c47f2f1df64",
-			"block_height": 148502665,
+			"block_height": 149533092,
 			"aliases": {
 				"emulator": "e5a8b7f23e8b548f",
 				"mainnet": "f919ee77447b7497",
@@ -464,14 +36,18 @@
 		},
 		"FlowIDTableStaking": {
 			"source": "mainnet://8624b52f9ddcd04a.FlowIDTableStaking",
-			"hash": "a85948ea75fd19d6c1941ced0f3f74ef459fd7dfacb5f46bcf49ec86de89534a",
-			"block_height": 148502665,
-			"aliases": {}
+			"hash": "04e84312a9a42aa853d7e4e117a740d2033fcfdfd1a317217b3e696fd9c750d4",
+			"block_height": 149533092,
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"mainnet": "8624b52f9ddcd04a",
+				"testnet": "9eca2b38b18b5dfe"
+			}
 		},
 		"FlowStorageFees": {
 			"source": "mainnet://e467b9dd11fa00df.FlowStorageFees",
 			"hash": "a92c26fb2ea59725441fa703aa4cd811e0fc56ac73d649a8e12c1e72b67a8473",
-			"block_height": 148502665,
+			"block_height": 149533092,
 			"aliases": {
 				"emulator": "f8d6e0586b0a20c7",
 				"mainnet": "e467b9dd11fa00df",
@@ -481,130 +57,62 @@
 		"FlowToken": {
 			"source": "mainnet://1654653399040a61.FlowToken",
 			"hash": "f82389e2412624ffa439836b00b42e6605b0c00802a4e485bc95b8930a7eac38",
-			"block_height": 148502665,
-			"aliases": {}
+			"block_height": 149533059,
+			"aliases": {
+				"emulator": "0ae53cb6e3f42a79",
+				"mainnet": "1654653399040a61",
+				"testnet": "7e60df042a9c0868"
+			}
 		},
 		"FungibleToken": {
 			"source": "mainnet://f233dcee88fe0abe.FungibleToken",
-			"hash": "4b74edfe7d7ddfa70b703c14aa731a0b2e7ce016ce54d998bfd861ada4d240f6",
-			"block_height": 148502665,
-			"aliases": {}
+			"hash": "3b04b3191e0c5d4d9ee3ce9c671b11985d29bf2732a5721b526cc8523c536f8f",
+			"block_height": 149533021,
+			"aliases": {
+				"emulator": "ee82856bf20e2aa6",
+				"mainnet": "f233dcee88fe0abe",
+				"testnet": "9a0766d93b6608b7"
+			}
 		},
 		"FungibleTokenMetadataViews": {
 			"source": "mainnet://f233dcee88fe0abe.FungibleTokenMetadataViews",
 			"hash": "70477f80fd7678466c224507e9689f68f72a9e697128d5ea54d19961ec856b3c",
-			"block_height": 148502665,
-			"aliases": {}
-		},
-		"IBridgePermissions": {
-			"source": "testnet://dfc20aee650fcbdf.IBridgePermissions",
-			"hash": "7b2b7cdfbc8749def124808875e37d0f2d1b3aebdceb728dec0c59890b2d701b",
-			"block_height": 316638714,
+			"block_height": 149533059,
 			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"ICrossVM": {
-			"source": "testnet://dfc20aee650fcbdf.ICrossVM",
-			"hash": "b95c36eef516da7cd4d2f507cd48288cc16b1d6605ff03b6fcd18161ff2d82e7",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"ICrossVMAsset": {
-			"source": "testnet://dfc20aee650fcbdf.ICrossVMAsset",
-			"hash": "d9c7b2bd9fdcc454180c33b3509a5a060a7fe4bd49bce38818f22fd08acb8ba0",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"IEVMBridgeNFTMinter": {
-			"source": "testnet://dfc20aee650fcbdf.IEVMBridgeNFTMinter",
-			"hash": "e2ad15c495ad7fbf4ab744bccaf8c4334dfb843b50f09e9681ce9a5067dbf049",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"IEVMBridgeTokenMinter": {
-			"source": "testnet://dfc20aee650fcbdf.IEVMBridgeTokenMinter",
-			"hash": "0ef39c6cb476f0eea2c835900b6a5a83c1ed5f4dbaaeb29cb68ad52c355a40e6",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"IFlowEVMNFTBridge": {
-			"source": "testnet://dfc20aee650fcbdf.IFlowEVMNFTBridge",
-			"hash": "e2843d7b7a0085c6b8a1119ca8f421e9655b74039a851574a804c8a1fb52a371",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"IFlowEVMTokenBridge": {
-			"source": "testnet://dfc20aee650fcbdf.IFlowEVMTokenBridge",
-			"hash": "2eef8fa9728b72f85beed6976b8783858aabe2da904c6e017a7aad1a5fd3d799",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
+				"emulator": "ee82856bf20e2aa6",
+				"mainnet": "f233dcee88fe0abe",
+				"testnet": "9a0766d93b6608b7"
 			}
 		},
 		"MetadataViews": {
 			"source": "mainnet://1d7e57aa55817448.MetadataViews",
 			"hash": "b290b7906d901882b4b62e596225fb2f10defb5eaaab4a09368f3aee0e9c18b1",
-			"block_height": 148502665,
-			"aliases": {}
-		},
-		"NonFungibleToken": {
-			"source": "mainnet://1d7e57aa55817448.NonFungibleToken",
-			"hash": "a258de1abddcdb50afc929e74aca87161d0083588f6abf2b369672e64cf4a403",
-			"block_height": 148502665,
+			"block_height": 149533059,
 			"aliases": {
 				"emulator": "f8d6e0586b0a20c7",
 				"mainnet": "1d7e57aa55817448",
 				"testnet": "631e88ae7f1d7c20"
 			}
 		},
-		"ScopedFTProviders": {
-			"source": "testnet://dfc20aee650fcbdf.ScopedFTProviders",
-			"hash": "77213f9588ec9862d07c4706689424ad7c1d8f043d5970d96bf18764bb936fc3",
-			"block_height": 316638714,
+		"NonFungibleToken": {
+			"source": "mainnet://1d7e57aa55817448.NonFungibleToken",
+			"hash": "a258de1abddcdb50afc929e74aca87161d0083588f6abf2b369672e64cf4a403",
+			"block_height": 149533059,
 			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"Serialize": {
-			"source": "testnet://dfc20aee650fcbdf.Serialize",
-			"hash": "064bb0d7b6c24ee1ed370cbbe9e0cda2a4e0955247de5e3e81f2f3a8a8cabfb7",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"SerializeMetadata": {
-			"source": "testnet://dfc20aee650fcbdf.SerializeMetadata",
-			"hash": "e9f84ea07e29cae05ee0d9264596eb281c291fc1090a10ce3de1a042b4d671da",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
-			}
-		},
-		"StringUtils": {
-			"source": "testnet://dfc20aee650fcbdf.StringUtils",
-			"hash": "28ac1a744ac7fb97253cba007a520a9ec1c2e14458d1bd1add1424fa19282c03",
-			"block_height": 316638714,
-			"aliases": {
-				"testnet": "dfc20aee650fcbdf"
+				"emulator": "f8d6e0586b0a20c7",
+				"mainnet": "1d7e57aa55817448",
+				"testnet": "631e88ae7f1d7c20"
 			}
 		},
 		"ViewResolver": {
 			"source": "mainnet://1d7e57aa55817448.ViewResolver",
 			"hash": "374a1994046bac9f6228b4843cb32393ef40554df9bd9907a702d098a2987bde",
-			"block_height": 148502665,
-			"aliases": {}
+			"block_height": 149533021,
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"mainnet": "1d7e57aa55817448",
+				"testnet": "631e88ae7f1d7c20"
+			}
 		}
 	},
 	"networks": {
@@ -622,7 +130,7 @@
 			}
 		},
 		"testnet-acc": {
-			"address": "0x2ebe72605dfc9fd0",
+			"address": "2ebe72605dfc9fd0",
 			"key": {
 				"type": "file",
 				"location": "testnet-acc.pkey"

@@ -9,3 +9,5 @@
 | `fulfill_evm_unstake_finalize_bundle.cdc` | **Unstake tx 3/3** — after `process_unstakes.cdc`: pool → COA → fund vault → `fulfillUnstakeRequest`. |
 
 Official Flow EVM bridge contracts are **`flow.json`** dependencies (testnet `dfc20aee650fcbdf`); upstream txs live in [onflow/flow-evm-bridge](https://github.com/onflow/flow-evm-bridge).
+
+**Stake-only EVM test (user `requestStake` + `fulfill_evm_stake_bundle`):** [`deployment/EVM_STAKE_FLOW.md`](../../../deployment/EVM_STAKE_FLOW.md)

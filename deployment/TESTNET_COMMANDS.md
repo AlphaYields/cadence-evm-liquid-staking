@@ -146,3 +146,7 @@ flow project deploy --update -n "$NETWORK" --signer "$SIGNER" -y
 - Add `-f /path/to/flow.json` to any command if `flow.json` is not in the current directory.
 - If `register_delegator` fails with staking auction closed, wait for the next staking window and retry (see [epoch schedule](https://developers.flow.com/networks/staking/schedule)).
 - Save addresses into `deployment/deployment.local.json` (gitignored); start from `deployment/deployment.example.json`.
+
+## After setup: EVM stake + keeper (stake only)
+
+See **[`EVM_STAKE_FLOW.md`](EVM_STAKE_FLOW.md)** — user `cast send … requestStake()` on Flow EVM, then protocol `flow transactions send … fulfill_evm_stake_bundle.cdc` (no unstake path).
